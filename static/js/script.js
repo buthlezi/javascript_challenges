@@ -98,3 +98,59 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
   document.getElementById('flex-box-rps-div').appendChild(botDiv);
   document.getElementById('flex-box-rps-div').appendChild(messageDiv);
 }
+  // Challenge 4: Change the Color of All Buttons
+  let all_buttons = document.getElementsByTagName('button');
+
+  let copyAllButtons = [];
+  for (let i = 0; i < all_buttons.length; i++) {
+    copyAllButtons.push(all_buttons[i].classList[1]);
+  }
+
+  console.log(copyAllButtons); // to display button list - order is immutable
+
+
+  // this is the main function - it calls all the others
+  
+  function buttonColorChange(buttonAttribute) {
+    // console.log(buttonAttribute.value); // to check attributes in console
+    if (buttonAttribute.value === 'red') {
+      buttonsRed();
+    } else if (buttonAttribute.value === 'green') {
+      buttonsGreen();
+    } else if (buttonAttribute.value === 'reset') {
+      buttonsColorReset();
+    }  else if (buttonAttribute.value === 'random') {
+      buttonsColorRandom();
+    }
+  }
+
+  function buttonsRed() {
+    for (let i=0; i < all_buttons.length; i++) {
+      all_buttons[i].classList.remove(all_buttons[i].classList[1]);
+      all_buttons[i].classList.add('btn-danger');
+    }
+  }
+
+  function buttonsGreen() {
+    for (let i=0; i < all_buttons.length; i++) {
+    all_buttons[i].classList.remove(all_buttons[i].classList[1]);
+    all_buttons[i].classList.add('btn-success');
+  }
+}
+
+  function buttonsColorReset() {
+    for (let i=0; i< all_buttons.length; i++) {
+      all_buttons[i].classList.remove(all_buttons[i].classList[1]);
+      all_buttons[i].classList.add(copyAllButtons[i]);
+    }
+  }
+
+  function buttonsColorRandom() {
+    let buttonsChoices = ['btn-primary', 'btn-success', 'btn-warning', 'btn-danger'];
+
+    for (let i = 0; i < all_buttons.length; i++) {
+      let randomNum = Math.floor(Math.random() * 4);
+      all_buttons[i].classList.remove(all_buttons[i].classList[1]);
+      all_buttons[i].classList.add(buttonsChoices[randomNum]);
+    }
+  }

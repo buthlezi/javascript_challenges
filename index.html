@@ -1,5 +1,6 @@
-    <html class="no-js"> <!--<![endif]-->
+<!DOCTYPE html>
 <html lang="en">
+<html class="no-js"> <![endif]
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,6 +47,25 @@
           <img id="paper" src="https://images.onlinelabels.com/images/clip-art/nexxuz/nexxuz_Loose_Leaf_Paper.png" height=150 width=150 alt="" onclick="rpsGame(this)">
           <img id="scissors" src="https://media.istockphoto.com/illustrations/peace-sign-illustration-id1127756950?k=6&m=1127756950&s=612x612&w=0&h=L6T6aq9N_FObq5okMTzsE9rFrW4WJJyRKCC9yXid70Y=" height=150 width=150 alt="" onclick="rpsGame(this)">
       </div>
+    </div>
+
+    <div class="container-4">
+        <h2>Challenge 4: Change the Color of All Buttons</h2>
+        <div class="flex-box-pick-color">
+          <form action="">
+            <select name="backdrop" id="background" onchange="buttonColorChange(this)">
+              <option value="random">Random</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="reset">Reset</option>
+            </select>
+          </form>
+
+          <button class="btn btn-primary">"Woah!!"</button>
+          <button class="btn btn-danger">"Firefox!!"</button>
+          <button class="btn btn-warning">"Ubuntu!!"</button>
+          <button class="btn btn-success">"Signal!!"</button>
+        </div>
     </div>
 
     <script src='static/js/script.js'></script>
