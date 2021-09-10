@@ -1,17 +1,28 @@
 .container-1,
 .container-2,
 .container-3,
-.container-4 {
+.container-4,
+.container-5 {
   border: 1px solid black;
   width: 75%;
   margin: 0 auto;
   text-align: center;
 }
 
+/* .container-5 {
+  border: 1px solid black;
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+} */
+
 .flex-box-container-1,
 .flex-box-container-2,
 .flex-box-rps,
-.flex-box-pick-color {
+.flex-box-pick-color,
+.flex-blackjack-row-1,
+.flex-blackjack-row-2,
+.flex-blackjack-row-3 {
   display: flex;
   border: 1px solid black;
   padding: 10px;
@@ -19,6 +30,54 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.flex-blackjack-row-1,
+.flex-blackjack-row-2 {
+  background: url("http://cheerspokernh.com/wp-content/uploads/2018/02/bigstock-poker-table-background-26587844-2-1.jpg")
+    center;
+  color: #ffffff;
+}
+
+.flex-blackjack-row-1 div {
+  /* display: flex; */
+  border: 1px solid black;
+  padding: 10px;
+  flex: 1;
+  /* flex: 1 ensures equal flex spacing */
+  text-align: center;
+  height: 350px;
+}
+
+.flex-blackjack-row-1 img {
+  width: 25%;
+  padding: 5px;
+}
+
+.flex-blackjack-row-2 button {
+  border: 1px solid black;
+  padding: 10px;
+  /* border used only in design checking phase - remove later for clean look; */
+}
+
+.flex-blackjack-row-2 div {
+  border: 1px solid black;
+  padding: 10px;
+  /* border used only in design checking phase - remove later for clean look; */
+}
+
+.flex-blackjack-row-3 table,
+th,
+td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+/* table,
+th,
+td {
+  padding: 5px;
+  border: 1px solid black;
+} */
 
 .flex-box-container-1 div {
   display: flex;
