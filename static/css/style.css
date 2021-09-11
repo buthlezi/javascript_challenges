@@ -45,7 +45,8 @@
   flex: 1;
   /* flex: 1 ensures equal flex spacing */
   text-align: center;
-  height: 350px;
+  /* height: 350px; */
+  height: 500px;
 }
 
 .flex-blackjack-row-1 img {
@@ -71,6 +72,8 @@ td {
   padding: 5px;
   border: 1px solid black;
 }
+
+/* alternative syntax below - why call 'table' separately ? */
 
 /* table,
 th,
