@@ -209,11 +209,6 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
   function blackjackDeal() {
     if (blackjackGame['turnsOver'] === true) {
 
-      // let winner = computeWinner();
-      // showResult(winner);
-      // // Or:
-      // // showResult(computeWinner());
-
       blackjackGame['isStand'] = false;
       let yourImages = document.querySelector('#your-box').querySelectorAll('img');
       let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
@@ -267,23 +262,31 @@ function showScore(activePlayer) {
   } else {
     document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score'];
   }
-
 }
 
-function dealerStandLogic() {
-  blackjackGame['isStand'] = true;
-  let card = randomCard();
-  showCard(card, DEALER);
-  updateScore(card, DEALER);
-  showScore(DEALER);
-  showResult();
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-  if (DEALER['score'] > 15) {
-    blackjackGame['turnsOver'] = true;
-    let winner = computeWinner();
-    showResult(winner);
-    console.log(blackjackGame['turnsOver']);
+
+async function dealerStandLogic() {
+  blackjackGame['isStand'] = true;
+
+  while (DEALER['score'] < 16 && blackjackGame['isStand'] === true) {
+    let card = randomCard();
+    showCard(card, DEALER);
+    updateScore(card, DEALER);
+    showScore(DEALER);
+    await sleep(2000);
   }
+  
+ 
+
+  // if (DEALER['score'] > 15) {
+  blackjackGame['turnsOver'] = true;
+  let winner = computeWinner();
+  showResult(winner);
+  // }
 }
 
 // compute winner - return who won
